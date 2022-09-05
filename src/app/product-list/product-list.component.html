@@ -1,9 +1,12 @@
 <h2>Products</h2>
 <ul>
   <li 
-  *ngFor="let product of products" 
+  *ngFor="let product of products; index as produitId" 
   [title]="product.description">
-  <h3>{{product.name}}</h3>
+  <h3>
+    {{product.name}}
+    <a [routerLink]="['/produits', produitId]">Voir + de détails</a>
+  </h3>
   <p *ngIf="product.description" [class.cher]="product.price>500">{{product.description}}</p>
   <button type="button" (click)="share()">Partager</button>
   <app-product-alerts
