@@ -7,7 +7,9 @@
   <p *ngIf="product.description" [class.cher]="product.price>500">{{product.description}}</p>
   <button type="button" (click)="share()">Partager</button>
   <app-product-alerts
-    [product]="product">
+    [produit]="product"
+    (notif) = "onNotif()"
+    >
   </app-product-alerts>
 </li>
 </ul>
