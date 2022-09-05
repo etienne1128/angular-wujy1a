@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Product } from '../products';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Product, products } from '../products';
 
 @Component({
   selector: 'app-produit-details',
@@ -7,11 +8,13 @@ import { Product } from '../products';
   styleUrls: ['./produit-details.component.css']
 })
 export class ProduitDetailsComponent implements OnInit {
-  @Input() product!: Product;
+  product!: Product;
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute
+  ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
 }

@@ -1,11 +1,11 @@
-<h2>Products</h2>
+<div *ngFor="let product of products; index as productId" [title]="product.description" >
 <ul>
   <li 
-  *ngFor="let product of products; index as produitId" 
   [title]="product.description">
   <h3>
-    {{product.name}}
-    <a [routerLink]="['/produits', produitId]">Voir + de détails</a>
+    <a [routerLink]="['/produits', productId]">
+      {{product.name}}
+    </a>
   </h3>
   <p *ngIf="product.description" [class.cher]="product.price>500">{{product.description}}</p>
   <button type="button" (click)="share()">Partager</button>
@@ -16,6 +16,7 @@
   </app-product-alerts>
 </li>
 </ul>
+</div>
 <!-- 
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
